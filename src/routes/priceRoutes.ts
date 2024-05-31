@@ -1,3 +1,4 @@
+ // src/routes/priceRoutes.ts
 import { Router } from 'express';
 import { getCryptoPrices } from '../controllers/priceController';
 

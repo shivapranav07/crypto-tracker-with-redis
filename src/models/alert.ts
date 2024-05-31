@@ -1,6 +1,7 @@
-import mongoose, { Schema, Document } from 'mongoose';
+ // models/alert.ts
+import mongoose, { Schema, Document, Model } from 'mongoose';
 
-interface IAlert extends Document {
+export interface IAlert extends Document {
   userId: string;
   crypto: string;
   targetPrice: number;
@@ -8,7 +9,7 @@ interface IAlert extends Document {
   notified: boolean;
 }
 
-const alertSchema: Schema = new Schema({
+const alertSchema: Schema<IAlert> = new Schema({
   userId: { type: String, required: true },
   crypto: { type: String, required: true },
   targetPrice: { type: Number, required: true },
@@ -16,5 +17,5 @@ const alertSchema: Schema = new Schema({
   notified: { type: Boolean, default: false },
 });
 
-const Alert = mongoose.model<IAlert>('Alert', alertSchema);
+const Alert: Model<IAlert> = mongoose.model<IAlert>('Alert', alertSchema);
 export default Alert;

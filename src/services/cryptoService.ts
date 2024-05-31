@@ -19,8 +19,6 @@ export const fetchCryptoPrices = async (cryptos: string[], currencies: string[])
     },
   });
 
-  await redisClient.set(cacheKey, JSON.stringify(response.data), {
-    EX: 60, // Cache for 1 minute
-  });
+  await redisClient.set(cacheKey, JSON.stringify(response.data));await redisClient.expire(cacheKey,30)
   return response.data;
 };
