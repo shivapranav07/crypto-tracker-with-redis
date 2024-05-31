@@ -28,18 +28,18 @@ A real-time cryptocurrency price monitoring and alerting system with caching opt
 
 ## Getting Started - Backend
 
- # 1. Clone the repository
+ ## 1. Clone the repository
 git clone https://github.com/yourusername/crypto-monitor.git
 cd crypto-monitor
 
-# 2. Install dependencies
+## 2. Install dependencies
 npm install
 
-# 3. Create a .env file and add required URLs (MongoDB, Redis URL, Redis API Key)
+## 3. Create a .env file and add required URLs (MongoDB, Redis URL, Redis API Key)
 
-# 4. Compile TypeScript files
+## 4. Compile TypeScript files
 tsc -b
 
-# 5. Run the code
+## 5. Run the code
 node dist/app.js
 
