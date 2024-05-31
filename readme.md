@@ -29,17 +29,38 @@ A real-time cryptocurrency price monitoring and alerting system with caching opt
 ## Getting Started - Backend
 
  ## 1. Clone the repository
-git clone https://github.com/yourusername/crypto-monitor.git
-cd crypto-monitor
+ ```bash
+ https://github.com/shivapranav07/crypto-tracker-with-redis
+ 
 
 ## 2. Install dependencies
+```bash
 npm install
 
 ## 3. Create a .env file and add required URLs (MongoDB, Redis URL, Redis API Key)
 
 ## 4. Compile TypeScript files
+```bash
 tsc -b
 
 ## 5. Run the code
+```bash
 node dist/app.js
+
+## API
+```bash
+ use http://localhost:3000/api/prices?cryptos=bitcoin&currencies=usd 
+ ```
+ =>to get current price of bitcoin and for every 30sec it will clear redis cache and gets new cost from coingeko and updates redis
+```bash
+  http://localhost:3000/api/alerts 
+  ```
+  for keeping alerts in the body give 
+ {
+  "userId": "user5",
+  "crypto": "bitcoin",
+  "targetPrice": 58000,
+  "direction": "above"
+}
+ in this example it will alert you if the price of the crypto went above 58000 usd
 
